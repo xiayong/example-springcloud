@@ -12,6 +12,7 @@
     <modules>
         <module>example-springcloud-parent</module>
         <module>example-springcloud-eureka</module>
+        <module>example-springcloud-eureka-server</module>
     </modules>
 
 
