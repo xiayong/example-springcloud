@@ -17,10 +17,39 @@
 
     <properties>
         <spring-cloud.version>Dalston.SR4</spring-cloud.version>
+        <project.version>1.0-SNAPSHO</project.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>me.xiayong.example.springcloud</groupId>
+                <artifactId>example-springcloud-parent</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.xiayong.example.springcloud</groupId>
+                <artifactId>example-springcloud-register</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.xiayong.example.springcloud</groupId>
+                <artifactId>example-springcloud-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.xiayong.example.springcloud</groupId>
+                <artifactId>example-springcloud-provider</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>me.xiayong.example.springcloud</groupId>
+                <artifactId>example-springcloud-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

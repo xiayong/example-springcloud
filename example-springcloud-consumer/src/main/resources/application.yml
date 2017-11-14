@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: example-springcloud-consumer
+
+server:
+  port: 0
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node1:8761/eureka/

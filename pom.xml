@@ -11,8 +11,10 @@
 
     <modules>
         <module>example-springcloud-parent</module>
-        <module>example-springcloud-eureka</module>
-        <module>example-springcloud-eureka-server</module>
+        <module>example-springcloud-register</module>
+        <module>example-springcloud-provider</module>
+        <module>example-springcloud-api</module>
+        <module>example-springcloud-consumer</module>
     </modules>
 
 
