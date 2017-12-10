@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author YongXia.
  * @since 1.0
  */
-@FeignClient("example-springcloud")
+@FeignClient("${example.springcloud.service.name:example-springcloud-service}")
 public interface ExampleFacade {
 
     @RequestMapping("now")

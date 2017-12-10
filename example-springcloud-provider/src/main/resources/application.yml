@@ -1,18 +1,22 @@
+spring:
+  application:
+    name: example-springcloud-service
+
+server:
+  port: 8771
+
+management:
+  context-path: /actuator
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://node1:8761/eureka/,http://node2:8762/eureka/
   instance:
     preferIpAddress: true
     statusPageUrlPath: ${management.context-path}/info
     healthCheckUrlPath: ${management.context-path}/health
 
-server:
-  port: 8771
-spring:
-  application:
-    name: example-springcloud
 
 
-management:
-  context-path: /actuator
+

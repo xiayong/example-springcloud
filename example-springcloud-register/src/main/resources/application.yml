@@ -1,6 +1,6 @@
 spring:
   application:
-    name: example-springcloud-eureka-server
+    name: example-springcloud-register-server
 
 ---
 spring:
