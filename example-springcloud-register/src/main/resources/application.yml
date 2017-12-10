@@ -1,6 +1,6 @@
 spring:
   application:
-    name: example-springcloud-register-server
+    name: example-springcloud-register
 
 ---
 spring:
