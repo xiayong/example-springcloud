@@ -5,10 +5,14 @@
     <parent>
         <artifactId>example-springcloud-parent</artifactId>
         <groupId>me.xiayong.example.springcloud</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
         <relativePath>../example-springcloud-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <main-class>me.xiayong.example.springcloud.register.ExampleRegisterApplication</main-class>
+    </properties>
 
     <artifactId>example-springcloud-register</artifactId>
 
@@ -25,7 +29,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>me.xiayong.example.springcloud.register.ExampleRegisterApplication</mainClass>
+                    <mainClass>${main-class}</mainClass>
                 </configuration>
                 <executions>
                     <execution>
