@@ -14,5 +14,3 @@ eureka:
       defaultZone: http://register1.xiayong.me:8761/eureka/,http://register2.xiayong.me:8761/eureka/
   instance:
     preferIpAddress: true
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/health
