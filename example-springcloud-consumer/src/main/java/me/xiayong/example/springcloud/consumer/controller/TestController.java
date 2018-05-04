@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author YongXia.
@@ -22,6 +24,22 @@ import java.util.UUID;
 public class TestController {
     @Autowired
     private ExampleFacade exampleFacade;
+
+    private static final AtomicInteger COUNTER = new AtomicInteger(0);
+
+    static {
+        new Thread(()->{
+            while (true) {
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("QPS:==> "+COUNTER.getAndSet(0));
+            }
+
+        }).start();
+    }
 
 
     @GetMapping("test")
@@ -34,5 +52,20 @@ public class TestController {
         String targetFileName = System.getProperty("java.io.tmpdir") + UUID.randomUUID().toString().replaceAll("-", "") + "-" + file.getOriginalFilename();
         Files.copy(file.getInputStream(), Paths.get(targetFileName));
         return targetFileName;
+    }
+
+
+    @PostMapping("qps")
+    public Object qps() {
+        for (int i = 0; i < 10; i++) {
+            new Thread(()->{
+               while (true) {
+                    exampleFacade.now();
+                    COUNTER.incrementAndGet();
+                }
+            }).start();
+        }
+
+        return "OK";
     }
 }
