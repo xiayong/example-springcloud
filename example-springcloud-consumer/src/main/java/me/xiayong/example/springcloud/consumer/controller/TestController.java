@@ -3,10 +3,7 @@ package me.xiayong.example.springcloud.consumer.controller;
 import me.xiayong.example.springcloud.api.ExampleFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -19,11 +16,12 @@ import java.util.UUID;
  * @since 1.0
  */
 @RestController
+@RequestMapping("test")
 public class TestController {
     @Autowired
     private ExampleFacade exampleFacade;
 
-    @GetMapping("test")
+    @GetMapping("")
     public String test() {
         return exampleFacade.now();
     }

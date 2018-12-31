@@ -11,6 +11,6 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://register1.xiayong.me:8761/eureka/,http://register2.xiayong.me:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
   instance:
     preferIpAddress: true
