@@ -2,23 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>example-springcloud-parent</artifactId>
         <groupId>me.xiayong.example.springcloud</groupId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../example-springcloud-parent/pom.xml</relativePath>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>example-springcloud-provider</artifactId>
+    <artifactId>example-springcloud-config</artifactId>
+
+
 
     <dependencies>
-
         <dependency>
-            <groupId>me.xiayong.example.springcloud</groupId>
-            <artifactId>example-springcloud-api</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
@@ -27,10 +28,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
     </dependencies>
-
 </project>

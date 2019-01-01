@@ -15,6 +15,7 @@
         <module>example-springcloud-provider</module>
         <module>example-springcloud-api</module>
         <module>example-springcloud-consumer</module>
+        <module>example-springcloud-config</module>
     </modules>
 
 
