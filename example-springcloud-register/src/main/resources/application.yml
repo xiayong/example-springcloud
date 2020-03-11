@@ -10,7 +10,7 @@ eureka:
     hostname: register.xiayong.me
   client:
     register-with-eureka: false
-    fetch-registry: false 
+    fetch-registry: false
 
 
 
