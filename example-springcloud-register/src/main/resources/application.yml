@@ -6,8 +6,13 @@ server:
 
 
 eureka:
+  server:
+    enable-self-preservation: false
   instance:
     hostname: register.xiayong.me
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 15
+    lease-expiration-duration-in-seconds: 30
   client:
     register-with-eureka: false
     fetch-registry: false
