@@ -12,11 +12,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.14.RELEASE</version>
+        <version>2.2.8.RELEASE</version>
     </parent>
 
     <properties>
-        <spring-cloud.version>Greenwich.SR6</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
         <project.version>1.0.1-SNAPSHOT</project.version>
     </properties>
 

@@ -3,10 +3,7 @@ spring:
     name: example-springcloud-consumer
 
 server:
-  port: 8781
-
-management:
-  context-path: /actuator
+  port: 8791
 
 eureka:
   client:
