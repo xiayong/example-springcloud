@@ -18,8 +18,12 @@ import java.util.UUID;
 @RestController
 @RequestMapping("test")
 public class TestController {
-    @Autowired
     private ExampleFacade exampleFacade;
+
+    @Autowired
+    public void setExampleFacade(ExampleFacade exampleFacade) {
+        this.exampleFacade = exampleFacade;
+    }
 
     @GetMapping("")
     public String test() {
