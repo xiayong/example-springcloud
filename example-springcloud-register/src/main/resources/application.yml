@@ -1,6 +1,6 @@
 spring:
   application:
-    name: example-springcloud-register
+    name: eureka-server
 server:
   port: 8761
 
@@ -10,35 +10,12 @@ eureka:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 10000
   instance:
-    hostname: register.xiayong.me
+    hostname: ${EUREKA_HOSTNAME:eureka-server}
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 15
     lease-expiration-duration-in-seconds: 30
   client:
-    register-with-eureka: false
-    fetch-registry: false
-
-
-
----
-spring:
-  profiles: register-1
-
-eureka:
-  instance:
-    hostname: register1.xiayong.me
-  client:
-    serviceUrl:
-      defaultZone: http://register2.xiayong.me:${server.port}/eureka/
-
----
-spring:
-  profiles: register-2
-
-eureka:
-  instance:
-    hostname: register2.xiayong.me
-  client:
-    serviceUrl:
-      defaultZone: http://register1.xiayong.me:${server.port}/eureka/
-
+    register-with-eureka: ${EUREKA_REGISTER_WITH_EUREKA:false}
+    fetch-registry: ${EUREKA_FETCH_REGISTRY:false}
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761/eureka/}
