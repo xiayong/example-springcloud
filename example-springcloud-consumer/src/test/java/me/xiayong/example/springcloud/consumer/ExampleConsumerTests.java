@@ -1,18 +1,18 @@
 package me.xiayong.example.springcloud.consumer;
 
 import me.xiayong.example.springcloud.api.ExampleFacade;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * @author YongXia.
  * @since 1.0
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = ExampleConsumerApplication.class)
 public class ExampleConsumerTests {
     private ExampleFacade exampleFacade;
@@ -29,6 +29,6 @@ public class ExampleConsumerTests {
     @Test
     public void test() {
         String now = exampleFacade.now();
-        Assert.assertNotNull(now);
+        Assertions.assertNotNull(now);
     }
 }
